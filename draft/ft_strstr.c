@@ -6,7 +6,7 @@
 /*   By: yoonsele <yoonsele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 21:56:43 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/08/30 22:27:53 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/08 22:14:36 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,3 @@ char	*ft_strstr(char *str, char *to_find)
 	else
 		return (&str[i]);
 }
-// if both are null -> doesn't have return value

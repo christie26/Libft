@@ -5,9 +5,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+int		ft_strlen(char *str);
 size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
-int		ft_strlen(char *str);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
