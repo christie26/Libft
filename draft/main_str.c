@@ -44,7 +44,7 @@ int main(void)
 	char *result1;
 	char *result2;
 	const char	*haystack = "happy etienne";
-	const char	*needle = "etienne";
+	const char	*needle = "happy";
 	size_t	len = 5;
 	result1 = strnstr(haystack,needle,len);
 	result2 = ft_strnstr(haystack,needle,len);
