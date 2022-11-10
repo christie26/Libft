@@ -1,30 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: yoonsele <yoonsele@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 20:42:49 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/09/09 08:29:38 by yoonsele         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-#include <stdlib.h>
+#include "libft.h"
 
-int	check_set(char *str, char *charset, int i)
-{
-	int	j;
-
-	j = -1;
-	while (charset[++j])
-	{
-		if (charset[j] == str[i])
-			return (1);
-	}
-	return (0);
-}
-
-char	*ft_malloc(char **tab, char *str, char *charset, int i)
+char	*ft_malloc(char **tab, char *s, char c, int cnt)
 {
 	int	j;
 	int	size;
@@ -49,39 +25,44 @@ char	*ft_malloc(char **tab, char *str, char *charset, int i)
 	return (str);
 }
 
-int	ft_size(char *str, char *charset)
+void    ft_filltab(char **tab, char *s, char c, int idx_tab)
 {
-	int	i;
-	int	count;
+    int j;
+    int cnt;
 
-	i = 0;
-	count = 0;
-	while (str[i])
-	{
-		while (check_set(str, charset, i) && str[i])
-			i++;
-		if (check_set(str, charset, i) == 0 && str[i])
-			count++;
-		while (check_set(str, charset, i) == 0 && str[i])
-			i++;
-	}
-	return (count);
+    if (*s == c)
+        s++;    //check
+    i = 0;
+    cnt = 0;
+    while (s[i++] != c)
+        cnt++;
+    tab[idx_tab] = (char *)malloc(sizeof(char) * (cnt + 1));
+    if (!tab[idx_tab])
+        return (0);
+    i = 0;
+    while (i++ < cnt)   // check
+        tab[idx_tab][i] = *s++;
+    tab[idx_tab][i] = 0;
 }
 
-char	**ft_split(char *str, char *charset)
+char    **ft_split(char const *s, char c)
 {
-	char	**tab;
-	int		size;
-	int		i;
+    char    **tab;
+    char    *tmp;
+    int     cnt;
 
-	size = ft_size(str, charset);
-	size++;
-	tab = (char **)malloc(size * sizeof(char *));
-	if (!tab)
-		return (0);
-	i = -1;
-	while (++i < size - 1)
-		str = ft_malloc(tab, str, charset, i);
-	tab[i] = 0;
-	return (tab);
+    cnt = 1;
+    tmp = (char *)s;
+    while (*tmp++)
+    {
+        if (*tmp == c)
+            cnt++;   
+    }
+    tab = (char **)malloc(sizeof(char *) * cnt);
+    if (!tab)
+        return (0);
+    while (cnt--)
+        ft_malloc(tab, s, c, cnt);
+    tab = 0;
+    return (tab);
 }
