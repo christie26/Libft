@@ -6,14 +6,11 @@
 #    By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/11 11:44:34 by yoonsele          #+#    #+#              #
-#    Updated: 2022/11/11 11:45:02 by yoonsele         ###   ########.fr        #
+#    Updated: 2022/11/11 17:37:31 by yoonsele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC_DIR		= srcs
-INC_DIR		= includes
-
-SRCS		= ${SRC_DIR}/*.c 
+SRCS		= ft_strlen.c, ft_strlcpy.c, ft_strlcat.c, ft_strnstr.c, ft_strrchr.c, ft_strncmp.c
 OBJS		= ${SRCS:.c=.o}
 NAME		= libft.a
 
@@ -28,7 +25,7 @@ $(NAME):	${OBJS}
 			ar rcs ${NAME} ${OBJS}
 
 .c.o:
-			${CC} ${CFLAGS}	-c $< -o $@ -I ${INC_DIR}
+			${CC} ${CFLAGS}	-c $< -o $@ -I .
 
 clean:
 			${RM} ${OBJS}

@@ -1,13 +1,23 @@
-void	*memcpy(void *dst, const void *src, size_t n)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/11 12:38:27 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/11 15:40:30 by yoonsele         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char	*d;
-	char	*s;
+	char	*tmp;
 
-	d = (char *)dst;
-	s = (char *)src;
-
+	tmp = (char *)dst;
 	while (n--)
-		*d++ = *s++;
-	return (dst);	
+		*tmp++ = *(char *)src++;
+	return (dst);
 }
-// in case they're null

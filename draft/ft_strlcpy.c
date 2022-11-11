@@ -6,7 +6,7 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 17:22:45 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/08 19:53:13 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/11 17:32:22 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 	char	*s;
 
-	s = (char*)src;
+	s = (char *)src;
 	i = 0;
-	len_src = ft_strlen(s);	
+	len_src = ft_strlen(s);
 	while (i + 1 < dstsize && src[i])
 	{
 		dst[i] = src[i];
