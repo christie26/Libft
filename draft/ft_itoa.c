@@ -6,7 +6,7 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 09:41:39 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/11 11:18:54 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/11 18:57:02 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	find_digit(int n, int *flag, unsigned int *nb)
 		cnt++;
 		tmp /= 10;
 	}
-	printf("cnt=%d\n",cnt);
+	printf("cnt=%d\n", cnt);
 	return (cnt);
 }
 
@@ -60,8 +60,7 @@ char	*ft_itoa(int n)
 	tmp = res;
 	if (flag)
 		*tmp = '-';
-	printf("nb=%u\n",nb);
-
+	printf("nb=%u\n", nb);
 	ft_fillres((tmp + digit - 1), res, nb);
 	res[digit] = 0;
 	return (res);

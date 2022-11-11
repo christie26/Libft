@@ -6,7 +6,7 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 17:21:30 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/09/08 11:42:35 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/11 19:00:41 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ char	*ft_strdup(const char *src)
 	new[i] = 0;
 	return (new);
 }
-// If insufficient memory is available, NULL is returned and errno is set to ENOMEM.
+// If insufficient memory is available, 
+// NULL is returned and errno is set to ENOMEM.
