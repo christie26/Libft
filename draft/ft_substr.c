@@ -15,12 +15,15 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*dst;
+	char	*src;
 
+	src = (char *)s;
 	dst = (char *)malloc(sizeof(char) * (len + 1));
 	if (!dst)
 		return (0);
-	while (len--)
-		*dst++ = s[start++];
+	src += start;
+	while (len-- && *src)
+		*dst++ = *src++;
 	*dst = 0;
 	return (dst);
 }

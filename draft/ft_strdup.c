@@ -17,16 +17,16 @@ char	*ft_strdup(const char *src)
 	int		i;
 	int		len;
 	char	*new;
+	char	*tmp;
 
 	len = ft_strlen((char *)src);
 	new = (char *)malloc((len + 1) * sizeof(char));
 	if (!(new))
 		return (0);
 	i = 0;
-	while (src[i++])
-		new[i] = src[i];
-	new[i] = 0;
+	tmp = new;
+	while (*src)
+		*tmp++ = *src++;
+	*tmp = 0;
 	return (new);
 }
-// If insufficient memory is available, 
-// NULL is returned and errno is set to ENOMEM.
