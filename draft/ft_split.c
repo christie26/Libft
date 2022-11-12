@@ -14,7 +14,7 @@
 
 void	ft_filltab(char **tab, char *s, char c, int idx_tab)
 {
-	int	j;
+	int	i;
 	int	cnt;
 
 	if (*s == c)
@@ -25,7 +25,7 @@ void	ft_filltab(char **tab, char *s, char c, int idx_tab)
 		cnt++;
 	tab[idx_tab] = (char *)malloc(sizeof(char) * (cnt + 1));
 	if (!tab[idx_tab])
-		return (0);
+		return ;
 	i = 0;
 	while (i++ < cnt)
 		tab[idx_tab][i] = *s++;
@@ -49,7 +49,7 @@ char	**ft_split(char const *s, char c)
 	if (!tab)
 		return (0);
 	while (cnt--)
-		ft_filltab(tab, s, c, cnt);
+		ft_filltab(tab, (char *)s, c, cnt);
 	tab = 0;
 	return (tab);
 }

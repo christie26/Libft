@@ -35,16 +35,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	cnt = 0;
 	while (*tmp++)
 	{
-		if (check_set(tmp, set))
+		if (check_set(tmp, (char *)set))
 			cnt++;
 	}
-	dst = (char *)malloc(sizeof(char) * (ft_strlen(s1) - ft_strlen(set) * cnt + 1));
+	dst = (char *)malloc(sizeof(char) * (ft_strlen((char *)s1) - ft_strlen((char *)set) * cnt + 1));
 	if (!dst)
 		return (0);
 	while (*s1++)
 	{
-		if (check_set(s1, set))
-			s1 += ft_strlen(set);
+		if (check_set((char *)s1, (char *)set))
+			s1 += ft_strlen((char *)set);
 		else
 			*dst++ = *s1;
 	}

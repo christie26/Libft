@@ -4,6 +4,6 @@ int main(void)
 {
 	int c;
 	c = 'f';
-	printf("isalpha:%d|ft:%d\n",isalpha(c),ft_isalpha(c));
+	printf("isalpha:%d|ft:%d\n",isalnum(c),ft_isalnum(c));
 		
 }
