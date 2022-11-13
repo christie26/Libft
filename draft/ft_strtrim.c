@@ -6,7 +6,7 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 19:01:14 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/11 19:02:49 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/13 14:41:47 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	check_set(char *s1, char *set)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		cnt;
+	int		len;
 	char	*tmp;
 	char	*dst;
 
@@ -38,7 +39,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		if (check_set(tmp, (char *)set))
 			cnt++;
 	}
-	dst = (char *)malloc(sizeof(char) * (ft_strlen((char *)s1) - ft_strlen((char *)set) * cnt + 1));
+	len = ft_strlen((char *)s1) - ft_strlen((char *)set) * cnt + 1;
+	dst = (char *)malloc(sizeof(char) * len);
 	if (!dst)
 		return (0);
 	while (*s1++)

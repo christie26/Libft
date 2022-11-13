@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoonsele <yoonsele@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 15:41:41 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/13 14:28:38 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/13 14:22:46 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/13 14:38:35 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_int(int a)
-{
-	char	b;
-
-	b = a + '0';
-	write(1, &b, 1);
-}
-
-void	ft_putnbr(int nb)
+void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	new;
-	int				c;
+	int				tmp;
+	char			c;
 
-	if (nb < 0)
+	if (n < 0)
 	{
-		new = -nb;
+		new = -n;
 		write(1, "-", 1);
 	}
 	else
-		new = nb;
-	c = new % 10;
+		new = n;
+	tmp = new % 10;
 	if (new >= 10)
 	{
 		new /= 10;
-		ft_putnbr(new);
+		ft_putnbr_fd(new, fd);
 	}
-	ft_print_int(c);
+	c = tmp + '0';
+	write(fd, &c, 1);
+	return ;
 }

@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 17:04:33 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/13 14:37:40 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/13 13:38:31 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/13 14:00:55 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	unsigned char	d;
+	int	len_src;
+	int	i;
 
-	d = (unsigned char)c;
-	if (('A' <= d && d <= 'Z') || ('a' <= d && d <= 'z'))
-		return (1);
-	else if ('0' <= d && d <= '9')
-		return (1);
-	else
-		return (0);
+	len_src = ft_strlen((char *)s);
+	i = 0;
+	while (i < len_src)
+	{
+		(*f)((unsigned int)i, s);
+		i++;
+	}
+	return ;
 }
+// why theey pass 's'. description says 'to pass each character'
