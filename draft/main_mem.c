@@ -6,7 +6,7 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 12:49:21 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/11 16:22:07 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/13 16:47:43 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,12 @@ int main(void)
 //	size_t	len = 5;
 //	res = ft_memmove(dst, src, len);
 //	printf("res:%s,dst:%s\n",(char *)res, dst);
-	char a[6] = "";
+	char a[8] = "yoonsele";
+	char b[5] = "happy";	
+//	printf("memmove:%s\n",(char *)memmove(b, a, 8));
+	printf("ft_memmove:%s\n",(char *)ft_memmove(b, a, 8));
 //	printf("memcpy:%s\n",(char *)memcpy(&a[0], &a[1],6));
 //	printf("ft_memcpy:%s\n",(char *)ft_memcpy(&a[0], &a[1],6));
-	printf("memmove:%s\n",(char *)memmove(&a[1], &a[0],6));
-//	printf("ft_memmove:%s\n",(char *)ft_memmove(&a[1], &a[0],6));
 
 /*	//memchr
 	char	*src = "happy etienne";

@@ -3,14 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoonsele <yoonsele@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 08:32:52 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/11 09:59:14 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/13 16:48:02 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/13 16:53:26 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_space(char c)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yoonsele <yoonsele@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/01 08:32:52 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/13 15:56:21 by yoonsele         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+static int	is_space(char c)
 {
 	if (c == '\n' || c == '\v' || c == '\f' || c == '\r'
 		|| c == '\t' || c == ' ')
@@ -19,7 +31,7 @@ int	is_space(char c)
 		return (0);
 }
 
-int	is_sign(char c, int *count)
+static int	is_sign(char c, int *count)
 {
 	if (c == '+' || c == '-')
 	{
@@ -31,7 +43,7 @@ int	is_sign(char c, int *count)
 		return (0);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int			i;
 	long long	j;
@@ -42,7 +54,7 @@ int	ft_atoi(char *str)
 	count = 0;
 	while (is_space(str[i]) == 1)
 		i++;
-	while (is_sign(str[i], &count) == 1)
+	if (is_sign(str[i], &count) == 1)
 		i++;
 	while (('0' <= str[i]) && (str[i] <= '9'))
 	{
