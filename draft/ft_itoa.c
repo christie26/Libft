@@ -6,13 +6,11 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 09:41:39 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/11 18:57:02 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/13 19:41:58 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	find_digit(int n, int *flag, unsigned int *nb)
+static int	find_digit(int n, int *flag, unsigned int *nb)
 {
 	int				cnt;
 	unsigned int	tmp;
@@ -34,11 +32,10 @@ int	find_digit(int n, int *flag, unsigned int *nb)
 		cnt++;
 		tmp /= 10;
 	}
-	printf("cnt=%d\n", cnt);
 	return (cnt);
 }
 
-void	ft_fillres(char *tmp, char *res, unsigned int n)
+static void	ft_fillres(char *tmp, char *res, unsigned int n)
 {
 	if (n >= 10)
 		ft_fillres(tmp - 1, res, n / 10);
@@ -60,16 +57,7 @@ char	*ft_itoa(int n)
 	tmp = res;
 	if (flag)
 		*tmp = '-';
-	printf("nb=%u\n", nb);
 	ft_fillres((tmp + digit - 1), res, nb);
 	res[digit] = 0;
 	return (res);
-}
-
-int	main(void)
-{
-	int	n;
-
-	n = -2147483648;
-	printf("%d=%s\n", n, ft_itoa(n));
 }
