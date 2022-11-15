@@ -19,11 +19,19 @@ void	print_center(t_list *head)
 	}
 }
 
+void	*f(void	*content)
+{
+	printf("check2\n");
+	void	*new;
+
+	new = (void *)((long)(content) + 1);
+	return (new);
+}
 int	main(void)
 {
 	// make base linked list
 	t_list	*head = malloc(sizeof(t_list));
-
+	head->content = (void *)5;
 	t_list	*node1 = malloc(sizeof(t_list));
 	head->next = node1;
 	node1->content = (void *)10;
@@ -81,6 +89,10 @@ int	main(void)
 	//ft_lstiter
 
 	//ft_lstmap
-
-
+	printf("\nft_lstmap\n");
+	t_list	*map;
+	map = ft_lstmap(head, &f, &del);
+	printf("check\n");
+	print_center(map);
+	
 }
