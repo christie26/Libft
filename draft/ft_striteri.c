@@ -13,16 +13,15 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	len_src;
-	int	i;
+	unsigned int	len_src;
+	unsigned int	i;
 
 	len_src = ft_strlen((char *)s);
 	i = 0;
 	while (i < len_src)
 	{
-		(*f)((unsigned int)i, s);
+		(*f)(i, &s[i]);
 		i++;
 	}
 	return ;
 }
-// why theey pass 's'. description says 'to pass each character'
