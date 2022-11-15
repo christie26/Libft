@@ -6,15 +6,15 @@
 #    By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/11 11:44:34 by yoonsele          #+#    #+#              #
-#    Updated: 2022/11/15 19:24:20 by yoonsele         ###   ########.fr        #
+#    Updated: 2022/11/15 19:28:29 by yoonsele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		= ft_strlen.c ft_strlcpy.c ft_strlcat.c 
+SRCS		= ft_strlen.c ft_strlcpy.c ft_strlcat.c \
 				ft_strchr.c ft_strrchr.c ft_strnstr.c ft_strncmp.c \
 				ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
 				ft_memchr.c ft_memcmp.c \
-				ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c 
+				ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 				ft_isprint.c ft_toupper.c ft_tolower.c ft_atoi.c \
 				ft_calloc.c ft_strdup.c \
 				ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
