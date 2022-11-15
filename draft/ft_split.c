@@ -6,9 +6,20 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 18:57:22 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 18:57:12 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/15 20:51:28 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+static char	*free_table(char **table, int idx_tab)
+{
+	while (idx_tab)
+	{
+		idx_tab--;
+		free(table[idx_tab]);
+	}
+	free(table);
+	return (0);
+}
 
 static char	*ft_filltab(char **tab, char *s, char c, int idx_tab)
 {
@@ -19,11 +30,14 @@ static char	*ft_filltab(char **tab, char *s, char c, int idx_tab)
 		s++;
 	i = 0;
 	cnt = 0;
-	while (s[i] && s[i++] != c)
+	while (s[i] && s[i] != c)
+	{
+		i++;
 		cnt++;
+	}
 	tab[idx_tab] = (char *)malloc(sizeof(char) * (cnt + 1));
 	if (!tab[idx_tab])
-		return (0);
+		return (free_table(tab, idx_tab));
 	i = 0;
 	while (i < cnt)
 	{
@@ -70,6 +84,8 @@ char	**ft_split(char const *s, char c)
 	while (i < cnt)
 	{
 		src = ft_filltab(tab, src, c, i);
+		if (src == 0)
+			return (0);
 		i++;
 	}
 	tab[i] = 0;
