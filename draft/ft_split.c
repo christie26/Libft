@@ -6,11 +6,9 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 18:57:22 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/13 20:06:16 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/15 15:59:13 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 static char	*ft_filltab(char **tab, char *s, char c, int idx_tab)
 {
@@ -21,7 +19,7 @@ static char	*ft_filltab(char **tab, char *s, char c, int idx_tab)
 		s++;
 	i = 0;
 	cnt = 0;
-	while (s[i++] != c)
+	while (s[i] && s[i++] != c)
 		cnt++;
 	tab[idx_tab] = (char *)malloc(sizeof(char) * (cnt + 1));
 	if (!tab[idx_tab])
@@ -29,11 +27,31 @@ static char	*ft_filltab(char **tab, char *s, char c, int idx_tab)
 	i = 0;
 	while (i < cnt)
 	{
-		tab[idx_tab][i] = *s++;
+		tab[idx_tab][i] = s[i];
 		i++;
 	}
 	tab[idx_tab][i] = 0;
-	return (s);
+	return (s + i);
+}
+
+static int	count(char const *s, char c)
+{
+	int		cnt;
+	char	*src;
+
+	src = (char *)s;
+	if (!*src)
+		return (0);
+	cnt = 0;
+	if (*src++ != c)
+		cnt++;
+	while (*src)
+	{
+		if (*src != c && *(src - 1) == c)
+			cnt++;
+		src++;
+	}
+	return (cnt);
 }
 
 char	**ft_split(char const *s, char c)
@@ -43,23 +61,17 @@ char	**ft_split(char const *s, char c)
 	int		cnt;
 	int		i;
 
-	cnt = 0;
-	src = (char *)s;
-	if (*src++ != c)
-		cnt++;
-	while (*src)
-	{
-		if (*src != c && *(src - 1) == c)
-			cnt++;
-		src++;
-	}
+	cnt = count(s, c);
 	tab = (char **)malloc(sizeof(char *) * (cnt + 1));
 	if (!tab)
 		return (0);
-	i = 0;
 	src = (char *)s;
+	i = 0;
 	while (i < cnt)
-		src = ft_filltab(tab, src, c, i++);
+	{
+		src = ft_filltab(tab, src, c, i);
+		i++;
+	}
 	tab[i] = 0;
 	return (tab);
 }

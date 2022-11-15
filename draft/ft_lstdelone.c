@@ -1,23 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 12:38:27 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 15:25:32 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/15 14:28:31 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 14:28:37 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	char	*tmp;
-
-	if (!dst && !src)
-		return (0);
-	tmp = (char *)dst;
-	while (n--)
-		*tmp++ = *(char *)src++;
-	return (dst);
+	(*del)(lst->content);
+	free (lst);
 }

@@ -25,6 +25,7 @@ int main(void)
 	printf("strchr:%s\n", strchr(s, c));
 	printf("ft_strchr:%s\n", ft_strchr(s, c));
 */
+/*
 	//strncmp
 
 	char *a = "happy";
@@ -33,7 +34,7 @@ int main(void)
 
 	printf("strncmp:%d\n",strncmp(a,b,n));
 	printf("ft_strncmp:%d\n",strncmp(a,b,n));
-
+*/
 /*
 //strnstr	
 	char *result1;
@@ -46,4 +47,8 @@ int main(void)
 	printf("strnstr:%s\n",result1);
 	printf("ft_strnstr:%s\n",result2);
 */
+//strtrim
+	char	*src = "    ";
+	char	*set = "\n \t";
+	printf("\nft_strtrim\nsrc=%s\nset=%s\nresult=%s",src, set, ft_strtrim(src,set));
 }

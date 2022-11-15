@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 12:38:27 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 15:25:32 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/15 14:28:09 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 14:28:13 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	char	*tmp;
-
-	if (!dst && !src)
-		return (0);
-	tmp = (char *)dst;
-	while (n--)
-		*tmp++ = *(char *)src++;
-	return (dst);
+	if (*lst)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
+	else
+		*lst = new;
 }

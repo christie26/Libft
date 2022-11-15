@@ -6,25 +6,25 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 15:48:04 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/11 15:59:55 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/15 15:17:10 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	nb;
+	size_t			i;
+	unsigned char	*src;
 
-	nb = n;
-	while (nb--)
+	src = (unsigned char *)s;
+	i = 0;
+	while (i < n)
 	{
-		if (*(char *)s == c)
+		if (src[i] == (unsigned char)c)
 			break ;
-		s++;
+		i++;
 	}
-	if (nb == -1)
+	if (i == n)
 		return (0);
-	else
-		return ((void *)s);
+	src += i;
+	return ((void *)src);
 }

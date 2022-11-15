@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 12:38:27 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 15:25:32 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/15 14:29:16 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 14:29:30 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int	ft_lstsize(t_list *lst)
 {
-	char	*tmp;
+	int	cnt;
 
-	if (!dst && !src)
-		return (0);
-	tmp = (char *)dst;
-	while (n--)
-		*tmp++ = *(char *)src++;
-	return (dst);
+	cnt = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		cnt++;
+	}
+	return (cnt);
 }

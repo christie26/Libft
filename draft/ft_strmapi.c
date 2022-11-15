@@ -6,26 +6,26 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 13:21:36 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/13 14:38:33 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/15 16:06:08 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		len_src;
-	int		i;
-	char	*res;
+	unsigned int	len_src;
+	unsigned int	i;
+	char			*res;
 
 	len_src = ft_strlen((char *)s);
-	res = (char *)malloc(sizeof(char) * len_src);
+	res = (char *)malloc(sizeof(char) * (len_src + 1));
 	if (!res)
 		return (0);
 	i = 0;
 	while (i < len_src)
 	{
-		res[i] = (*f)((unsigned int)i, s[i]);
+		res[i] = (*f)(i, s[i]);
 		i++;
 	}
+	res[i] = 0;
 	return (res);
 }

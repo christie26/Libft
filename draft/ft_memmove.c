@@ -6,7 +6,7 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:45:02 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/13 16:47:28 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/15 15:26:46 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char	*tmp;
 	size_t	i;
 
+	if (!dst && !src)
+		return (0);
 	tmp = dst;
 	if (dst < src)
 	{
