@@ -6,11 +6,9 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 14:33:56 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/13 14:34:02 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:54:58 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

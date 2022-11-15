@@ -6,11 +6,9 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 22:15:31 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/11 18:06:45 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:59:07 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	check_all(const char *haystack, const char *needle, int i, size_t len)
 {

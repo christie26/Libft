@@ -6,11 +6,9 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 17:21:30 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/11 19:00:41 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:58:21 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 char	*ft_strdup(const char *src)
 {
