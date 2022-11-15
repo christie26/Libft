@@ -48,9 +48,9 @@ int main(void)
 	char a[8] = "yoonsele";
 	char b[5] = "happy";	
 //	printf("memmove:%s\n",(char *)memmove(b, a, 8));
-	printf("ft_memmove:%s\n",(char *)ft_memmove(b, a, 8));
-//	printf("memcpy:%s\n",(char *)memcpy(&a[0], &a[1],6));
-//	printf("ft_memcpy:%s\n",(char *)ft_memcpy(&a[0], &a[1],6));
+//	printf("ft_memmove:%s\n",(char *)ft_memmove(b, a, 8));
+	printf("memcpy:%s\n",(char *)memcpy(b, a, 6));
+	printf("ft_memcpy:%s\n",(char *)ft_memcpy(&a[0], &a[1],6));
 
 /*	//memchr
 	char	*src = "happy etienne";

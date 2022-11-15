@@ -1,0 +1,23 @@
+ft_lstnew
+new->content=30
+new->next=0
+
+ft_lstaad_front
+0th content is 30.
+1th content is 0.
+2th content is 10.
+3th content is 20.
+
+ft_lstsize
+size is 4
+
+ft_lstlast
+last node's content is 20current content is 30
+current content is 0
+current content is 10
+ft_lstad_back
+0th content is 30.
+1th content is 0.
+2th content is 10.
+3th content is 20.
+4th content is 40.

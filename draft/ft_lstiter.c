@@ -1,7 +1,8 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-
+	(*f)(lst->content);
+	
 }
 //Turn in files -
 //Parameters lst: The address of a pointer to a node.

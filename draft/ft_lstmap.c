@@ -1,7 +1,13 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	
+	t_list	*new;
+	new	= malloc(sizeof(t_list));
+	if (!new)
+		return (0);
+	new->content = (*f)(lst->content);
+	(*del)(lst->content);
+	return (new);
 }
 
 
