@@ -6,32 +6,51 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 18:43:39 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 16:48:01 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:43:29 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
+size_t	get_length(char const *s, unsigned int start, size_t len)
+{
+	size_t	j;
+	size_t	cnt;
+
+	j = 0;
+	cnt = 0;
+	while (s[j] && cnt < len)
+	{
+		if (j < start)
+		{
+			j++;
+			continue ;
+		}
+		j++;
+		cnt++;
+	}
+	return (cnt);
+}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*dst;
-	char	*src;
 	size_t	i;
+	size_t	j;
+	size_t	cnt;
 
-	dst = (char *)malloc(sizeof(char) * (len + 1));
+	cnt = get_length(s, start, len);
+	dst = (char *)malloc(sizeof(char) * (cnt + 1));
 	if (!dst)
 		return (0);
-	src = (char *)s;
 	i = 0;
-	if (start >= (unsigned int)ft_strlen(src))
+	j = 0;
+	while (s[j] && i < len)
 	{
-		dst[i] = 0;
-		return (dst);
-	}
-	src += start;
-	while (i < len && src[i])
-	{
-		dst[i] = src[i];
-		i++;
+		if (j < start)
+		{
+			j++;
+			continue ;
+		}
+		dst[i++] = s[j++];
 	}
 	dst[i] = 0;
 	return (dst);

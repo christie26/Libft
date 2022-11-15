@@ -6,11 +6,11 @@
 /*   By: yoonsele <yoonsele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 15:40:50 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/13 13:38:22 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:45:53 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	i;
 

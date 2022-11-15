@@ -6,7 +6,7 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 09:41:39 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 17:16:39 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:10:22 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ static int	find_digit(int n, int *flag, unsigned int *nb)
 	}
 	return (cnt);
 }
+
 char	*ft_itoa(int n)
 {
 	int				digit;
