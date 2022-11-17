@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 20:58:08 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 18:59:12 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/08/29 21:55:22 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:58:45 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char	key;
-	int		i;
-	int		tmp;
-	int		len_src;
+	size_t	i;
 
-	len_src = ft_strlen((char *)s);
-	key = c;
 	i = 0;
-	tmp = -1;
-	while (i < len_src + 1)
+	if (n == 0)
+		return (0);
+	while ((i + 1 < n) && s1[i] && s2[i])
 	{
-		if (src[i] == key)
-			tmp = i;
+		if ((unsigned char)s1[i] - (unsigned char)s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
 	}
-	if (tmp != -1)
-		return (src + tmp);
-	return (0);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

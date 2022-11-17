@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 20:58:08 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 18:59:12 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/15 14:28:18 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 21:29:36 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	char	key;
-	int		i;
-	int		tmp;
-	int		len_src;
+	t_list	*tmp;
 
-	len_src = ft_strlen((char *)s);
-	key = c;
-	i = 0;
-	tmp = -1;
-	while (i < len_src + 1)
+	if (!(*lst))
+		return ;
+	tmp = *lst;
+	while (*lst)
 	{
-		if (src[i] == key)
-			tmp = i;
-		i++;
+		tmp = (*lst)->next;
+		(*del)((*lst)->content);
+		free (*lst);
+		*lst = tmp;
 	}
-	if (tmp != -1)
-		return (src + tmp);
-	return (0);
 }

@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 20:58:08 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 18:59:12 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/13 13:21:36 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:58:41 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	key;
-	int		i;
-	int		tmp;
-	int		len_src;
+	unsigned int	len_src;
+	unsigned int	i;
+	char			*res;
 
 	len_src = ft_strlen((char *)s);
-	key = c;
+	res = (char *)malloc(sizeof(char) * (len_src + 1));
+	if (!res)
+		return (0);
 	i = 0;
-	tmp = -1;
-	while (i < len_src + 1)
+	while (i < len_src)
 	{
-		if (src[i] == key)
-			tmp = i;
+		res[i] = (*f)(i, s[i]);
 		i++;
 	}
-	if (tmp != -1)
-		return (src + tmp);
-	return (0);
+	res[i] = 0;
+	return (res);
 }

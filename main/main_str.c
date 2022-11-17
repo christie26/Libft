@@ -2,19 +2,19 @@
 
 int main(void)
 {
-/*
-	// strlcpy & strlcat
-	char a[10] = "happy\0";
-	char b[100] = "etienne\0";
-	char c[10] = "happy\0";
-	char d[100] = "etienne\0";
-	size_t size = 5;
 
-	size_t i = ft_strlcat(b, a, size);
-	size_t j = strlcat(d, c, size);
-	printf("%zu, %s(ft_strlcat)\n", i, b);
-	printf("%zu, %s(strlcat)\n", j, d);
-*/	
+	// strlcpy & strlcat
+	char *a;
+	char b[100] = "etienne\0";
+	char *c;
+	char d[100] = "etienne\0";
+	size_t size = 0;
+
+	size_t i = ft_strlcat(a, b, size);
+	size_t j = strlcat(c, d, size);
+	printf("%zu, %s(ft_strlcat)\n", i, a);
+	printf("%zu, %s(strlcat)\n", j, c);
+	
 /*
 	// strchr & strrchr
 	char	*s = "abciiabc";
@@ -47,8 +47,10 @@ int main(void)
 	printf("strnstr:%s\n",result1);
 	printf("ft_strnstr:%s\n",result2);
 */
+/*
 //strtrim
 	char	*src = "    ";
 	char	*set = "\n \t";
 	printf("\nft_strtrim\nsrc=%s\nset=%s\nresult=%s",src, set, ft_strtrim(src,set));
+*/
 }

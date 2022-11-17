@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 20:58:08 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 18:59:12 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/13 14:34:59 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:55:01 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_calloc(size_t count, size_t size)
 {
-	char	key;
-	int		i;
-	int		tmp;
-	int		len_src;
+	void	*res;
 
-	len_src = ft_strlen((char *)s);
-	key = c;
-	i = 0;
-	tmp = -1;
-	while (i < len_src + 1)
-	{
-		if (src[i] == key)
-			tmp = i;
-		i++;
-	}
-	if (tmp != -1)
-		return (src + tmp);
-	return (0);
+	if (size && count > SIZE_MAX / size)
+		size = 0;
+	res = (void *)malloc(count * size);
+	if (!res)
+		return (0);
+	res = ft_memset(res, 0, count * size);
+	return (res);
 }

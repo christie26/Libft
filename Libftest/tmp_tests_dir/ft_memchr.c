@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 20:58:08 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 18:59:12 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/11 15:48:04 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:56:13 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	key;
-	int		i;
-	int		tmp;
-	int		len_src;
+	size_t			i;
+	unsigned char	*src;
 
-	len_src = ft_strlen((char *)s);
-	key = c;
+	src = (unsigned char *)s;
 	i = 0;
-	tmp = -1;
-	while (i < len_src + 1)
+	while (i < n)
 	{
-		if (src[i] == key)
-			tmp = i;
+		if (src[i] == (unsigned char)c)
+			break ;
 		i++;
 	}
-	if (tmp != -1)
-		return (src + tmp);
-	return (0);
+	if (i == n)
+		return (0);
+	src += i;
+	return ((void *)src);
 }

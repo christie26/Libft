@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 20:58:08 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 18:59:12 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/15 14:27:09 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:55:32 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	char	key;
-	int		i;
-	int		tmp;
-	int		len_src;
+	t_list	*head;
+	t_list	*curr;
 
-	len_src = ft_strlen((char *)s);
-	key = c;
-	i = 0;
-	tmp = -1;
-	while (i < len_src + 1)
+	head = *lst;
+	curr = *lst;
+	if (!(*lst))
 	{
-		if (src[i] == key)
-			tmp = i;
-		i++;
+		if (!new)
+			return ;
+		*lst = new;
+		return ;
 	}
-	if (tmp != -1)
-		return (src + tmp);
-	return (0);
+	while (curr->next)
+		curr = curr->next;
+	curr->next = new;
+	*lst = head;
 }

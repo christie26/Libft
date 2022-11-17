@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 20:58:08 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 18:59:12 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/11 17:06:24 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:55:18 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_isdigit(int c)
 {
-	char	key;
-	int		i;
-	int		tmp;
-	int		len_src;
-
-	len_src = ft_strlen((char *)s);
-	key = c;
-	i = 0;
-	tmp = -1;
-	while (i < len_src + 1)
-	{
-		if (src[i] == key)
-			tmp = i;
-		i++;
-	}
-	if (tmp != -1)
-		return (src + tmp);
-	return (0);
+	if ('0' <= c && c <= '9')
+		return (1);
+	else
+		return (0);
 }

@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
+/*   By: yoonsele <yoonsele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 20:58:08 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 18:59:12 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/08/31 15:40:50 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:58:39 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_strlen(const char *str)
 {
-	char	key;
-	int		i;
-	int		tmp;
-	int		len_src;
+	int	i;
 
-	len_src = ft_strlen((char *)s);
-	key = c;
 	i = 0;
-	tmp = -1;
-	while (i < len_src + 1)
-	{
-		if (src[i] == key)
-			tmp = i;
+	while (str[i])
 		i++;
-	}
-	if (tmp != -1)
-		return (src + tmp);
-	return (0);
+	return (i);
 }

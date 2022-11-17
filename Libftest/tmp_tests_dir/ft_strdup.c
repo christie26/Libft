@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 20:58:08 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 18:59:12 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/09/06 17:21:30 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:58:21 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strdup(const char *src)
 {
-	char	key;
 	int		i;
-	int		tmp;
-	int		len_src;
+	int		len;
+	char	*new;
+	char	*tmp;
 
-	len_src = ft_strlen((char *)s);
-	key = c;
+	len = ft_strlen((char *)src);
+	new = (char *)malloc((len + 1) * sizeof(char));
+	if (!(new))
+		return (0);
 	i = 0;
-	tmp = -1;
-	while (i < len_src + 1)
-	{
-		if (src[i] == key)
-			tmp = i;
-		i++;
-	}
-	if (tmp != -1)
-		return (src + tmp);
-	return (0);
+	tmp = new;
+	while (*src)
+		*tmp++ = *src++;
+	*tmp = 0;
+	return (new);
 }

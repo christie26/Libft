@@ -1,33 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 20:58:08 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 18:59:12 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/15 14:28:31 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:55:40 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	char	key;
-	int		i;
-	int		tmp;
-	int		len_src;
-
-	len_src = ft_strlen((char *)s);
-	key = c;
-	i = 0;
-	tmp = -1;
-	while (i < len_src + 1)
-	{
-		if (src[i] == key)
-			tmp = i;
-		i++;
-	}
-	if (tmp != -1)
-		return (src + tmp);
-	return (0);
+	(*del)(lst->content);
+	free (lst);
 }

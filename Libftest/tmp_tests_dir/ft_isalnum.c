@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 20:58:08 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 18:59:12 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/11 17:04:33 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:55:06 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_isalnum(int c)
 {
-	char	key;
-	int		i;
-	int		tmp;
-	int		len_src;
+	unsigned char	d;
 
-	len_src = ft_strlen((char *)s);
-	key = c;
-	i = 0;
-	tmp = -1;
-	while (i < len_src + 1)
-	{
-		if (src[i] == key)
-			tmp = i;
-		i++;
-	}
-	if (tmp != -1)
-		return (src + tmp);
-	return (0);
+	d = (unsigned char)c;
+	if (('A' <= d && d <= 'Z') || ('a' <= d && d <= 'z'))
+		return (1);
+	else if ('0' <= d && d <= '9')
+		return (1);
+	else
+		return (0);
 }

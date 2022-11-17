@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 20:58:08 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 18:59:12 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/13 13:38:31 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:58:24 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	char	key;
-	int		i;
-	int		tmp;
-	int		len_src;
+	unsigned int	len_src;
+	unsigned int	i;
 
 	len_src = ft_strlen((char *)s);
-	key = c;
 	i = 0;
-	tmp = -1;
-	while (i < len_src + 1)
+	while (i < len_src)
 	{
-		if (src[i] == key)
-			tmp = i;
+		(*f)(i, &s[i]);
 		i++;
 	}
-	if (tmp != -1)
-		return (src + tmp);
-	return (0);
+	return ;
 }

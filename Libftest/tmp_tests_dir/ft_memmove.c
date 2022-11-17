@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 20:58:08 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 18:59:12 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/11 14:45:02 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:56:19 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	key;
-	int		i;
-	int		tmp;
-	int		len_src;
+	char	*tmp;
+	size_t	i;
 
-	len_src = ft_strlen((char *)s);
-	key = c;
-	i = 0;
-	tmp = -1;
-	while (i < len_src + 1)
+	if (!dst && !src)
+		return (0);
+	tmp = dst;
+	if (dst < src)
 	{
-		if (src[i] == key)
-			tmp = i;
-		i++;
+		i = 0;
+		while (i < len)
+		{
+			tmp[i] = ((char *)src)[i];
+			i++;
+		}
 	}
-	if (tmp != -1)
-		return (src + tmp);
-	return (0);
+	else
+	{
+		i = len;
+		while (i-- > 0)
+			tmp[i] = ((char *)src)[i];
+	}		
+	return (dst);
 }

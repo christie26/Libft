@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 20:58:08 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 18:59:12 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/11 14:10:49 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:56:20 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+#include <stdio.h>
+void	*ft_memset(void *b, int c, size_t len)
 {
-	char	key;
-	int		i;
-	int		tmp;
-	int		len_src;
+	size_t	i;
 
-	len_src = ft_strlen((char *)s);
-	key = c;
 	i = 0;
-	tmp = -1;
-	while (i < len_src + 1)
-	{
-		if (src[i] == key)
-			tmp = i;
-		i++;
-	}
-	if (tmp != -1)
-		return (src + tmp);
-	return (0);
+	while (i < len)
+		((char *)b)[i++] = (unsigned char)c;
+	return (b);
+}
+int main(void)
+{
+	int b[5];
+	size_t len = 0;
+	ft_memset(b, 1, sizeof(b));
+	printf("%d\n", b[0]);
+	printf("%d\n", b[1]);
+	printf("%d\n", b[2]);
+	printf("%d\n", b[3]);
+	printf("%d\n", b[4]);
 }
