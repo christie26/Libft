@@ -6,11 +6,11 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 14:28:50 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/18 12:48:59 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:57:06 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-t_list	*sethead(t_list *lst, void *(*f)(void *), void (*del)(void *))
+static t_list	*sethead(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*head;
 	void	*tmp;

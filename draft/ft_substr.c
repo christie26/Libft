@@ -6,11 +6,11 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 18:43:39 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/18 13:48:46 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:56:31 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	get_length(char const *s, unsigned int start, size_t len)
+static size_t	get_length(char const *s, unsigned int start, size_t len)
 {
 	size_t	j;
 	size_t	cnt;

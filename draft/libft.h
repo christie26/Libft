@@ -6,18 +6,14 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 14:41:55 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 18:59:26 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:22:25 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <string.h>
 # include <stdlib.h>
-# include <stdio.h>
-# include <ctype.h>
-# include <stdint.h>
 # include <unistd.h>
 
 typedef struct s_list

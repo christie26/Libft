@@ -6,7 +6,7 @@
 #    By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/11 11:44:34 by yoonsele          #+#    #+#              #
-#    Updated: 2022/11/18 13:45:58 by yoonsele         ###   ########.fr        #
+#    Updated: 2022/11/18 14:54:27 by yoonsele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,10 @@ SRCS		= ft_strlen.c ft_strlcpy.c ft_strlcat.c \
 BSRCS		= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 				ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
 				ft_lstiter.c ft_lstmap.c
+
+ifdef BONUS
+	SRCS := ${SRCS} ${BSRCS}
+endif
 
 OBJS		= ${SRCS:.c=.o}
 BOBJS		= ${BSRCS:.c=.o}
@@ -50,7 +54,7 @@ fclean:		clean
 
 re:			fclean all
 
-bonus:		${BOBJS}
-			ar rcs ${NAME} ${BOBJS}
+bonus:		
+			make BONUS=1 all
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re bonus

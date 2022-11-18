@@ -6,11 +6,11 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 22:15:31 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/18 12:57:40 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:56:16 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	check_all(const char *haystack, const char *needle, size_t i, size_t len)
+static int	check_all(const char *haystack, const char *needle, size_t i, size_t len)
 {
 	int	j;
 

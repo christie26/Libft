@@ -6,11 +6,11 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 19:01:14 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/18 13:15:04 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:56:25 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	check_set(char s1, char const *set)
+static int	check_set(char s1, char const *set)
 {
 	int	i;
 

@@ -6,13 +6,13 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 17:05:33 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/18 13:23:55 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:27:09 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
-	if ('A' <= c && c <= 'Z' | 'a' <= c && c <= 'z')
+	if (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z'))
 		return (1);
 	else
 		return (0);

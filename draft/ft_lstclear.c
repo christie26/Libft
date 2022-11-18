@@ -6,7 +6,7 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 14:28:18 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 21:29:36 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:18:13 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	while (*lst)
 	{
 		tmp = (*lst)->next;
-		(*del)((*lst)->content);
-		free (*lst);
+		ft_lstdelone(*lst, *del);
 		*lst = tmp;
 	}
 }
