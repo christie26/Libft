@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 21:57:03 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 19:25:15 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/11 15:48:04 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:56:13 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	len_dst;
-	size_t	len_src;
-	size_t	i;
+	size_t			i;
+	unsigned char	*src;
 
-	len_dst = ft_strlen(dst);
-	len_src = ft_strlen((char *)src);
-	if (size == 0)
-		return (len_src);
-	if (size < len_dst)
-		return (size + len_src);
+	src = (unsigned char *)s;
 	i = 0;
-	while (len_dst + 1 + i < size && src[i])
+	while (i < n)
 	{
-		dst[len_dst + i] = src[i];
+		if (src[i] == (unsigned char)c)
+			break ;
 		i++;
 	}
-	dst[len_dst + i] = 0;
-	return (len_dst + len_src);
+	if (i == n)
+		return (0);
+	src += i;
+	return ((void *)src);
 }

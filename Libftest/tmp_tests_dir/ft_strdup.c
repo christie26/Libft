@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 21:57:03 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 19:25:15 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/09/06 17:21:30 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:58:21 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strdup(const char *src)
 {
-	size_t	len_dst;
-	size_t	len_src;
-	size_t	i;
+	int		i;
+	int		len;
+	char	*new;
+	char	*tmp;
 
-	len_dst = ft_strlen(dst);
-	len_src = ft_strlen((char *)src);
-	if (size == 0)
-		return (len_src);
-	if (size < len_dst)
-		return (size + len_src);
+	len = ft_strlen((char *)src);
+	new = (char *)malloc((len + 1) * sizeof(char));
+	if (!(new))
+		return (0);
 	i = 0;
-	while (len_dst + 1 + i < size && src[i])
-	{
-		dst[len_dst + i] = src[i];
-		i++;
-	}
-	dst[len_dst + i] = 0;
-	return (len_dst + len_src);
+	tmp = new;
+	while (*src)
+		*tmp++ = *src++;
+	*tmp = 0;
+	return (new);
 }

@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 21:57:03 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 19:25:15 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/13 14:34:59 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:55:01 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	len_dst;
-	size_t	len_src;
-	size_t	i;
+	void	*res;
 
-	len_dst = ft_strlen(dst);
-	len_src = ft_strlen((char *)src);
-	if (size == 0)
-		return (len_src);
-	if (size < len_dst)
-		return (size + len_src);
-	i = 0;
-	while (len_dst + 1 + i < size && src[i])
-	{
-		dst[len_dst + i] = src[i];
-		i++;
-	}
-	dst[len_dst + i] = 0;
-	return (len_dst + len_src);
+	if (size && count > SIZE_MAX / size)
+		size = 0;
+	res = (void *)malloc(count * size);
+	if (!res)
+		return (0);
+	res = ft_memset(res, 0, count * size);
+	return (res);
 }

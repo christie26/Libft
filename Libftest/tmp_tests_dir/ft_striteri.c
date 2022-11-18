@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 21:57:03 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 19:25:15 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/13 13:38:31 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:58:24 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	len_dst;
-	size_t	len_src;
-	size_t	i;
+	unsigned int	len_src;
+	unsigned int	i;
 
-	len_dst = ft_strlen(dst);
-	len_src = ft_strlen((char *)src);
-	if (size == 0)
-		return (len_src);
-	if (size < len_dst)
-		return (size + len_src);
+	len_src = ft_strlen((char *)s);
 	i = 0;
-	while (len_dst + 1 + i < size && src[i])
+	while (i < len_src)
 	{
-		dst[len_dst + i] = src[i];
+		(*f)(i, &s[i]);
 		i++;
 	}
-	dst[len_dst + i] = 0;
-	return (len_dst + len_src);
+	return ;
 }

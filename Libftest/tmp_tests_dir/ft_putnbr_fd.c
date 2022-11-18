@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 21:57:03 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 19:25:15 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/13 14:22:46 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:57:01 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	len_dst;
-	size_t	len_src;
-	size_t	i;
+	unsigned int	new;
+	int				tmp;
+	char			c;
 
-	len_dst = ft_strlen(dst);
-	len_src = ft_strlen((char *)src);
-	if (size == 0)
-		return (len_src);
-	if (size < len_dst)
-		return (size + len_src);
-	i = 0;
-	while (len_dst + 1 + i < size && src[i])
+	if (n < 0)
 	{
-		dst[len_dst + i] = src[i];
-		i++;
+		new = -n;
+		write(fd, "-", 1);
 	}
-	dst[len_dst + i] = 0;
-	return (len_dst + len_src);
+	else
+		new = n;
+	tmp = new % 10;
+	if (new >= 10)
+	{
+		new /= 10;
+		ft_putnbr_fd(new, fd);
+	}
+	c = tmp + '0';
+	write(fd, &c, 1);
+	return ;
 }

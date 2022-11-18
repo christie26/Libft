@@ -13,13 +13,11 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	char	key;
-	char	*src;
 	int		i;
 	int		tmp;
 	int		len_src;
 
-	src = (char *) s;
-	len_src = ft_strlen(src);
+	len_src = ft_strlen((char *)s);
 	key = c;
 	i = 0;
 	tmp = -1;

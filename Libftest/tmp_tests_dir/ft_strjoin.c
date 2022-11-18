@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 21:57:03 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 19:25:15 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/11 18:46:18 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:58:27 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	len_dst;
-	size_t	len_src;
-	size_t	i;
+	char	*dst;
+	int		len_s1;
+	int		len_s2;
+	int		total;
 
-	len_dst = ft_strlen(dst);
-	len_src = ft_strlen((char *)src);
-	if (size == 0)
-		return (len_src);
-	if (size < len_dst)
-		return (size + len_src);
-	i = 0;
-	while (len_dst + 1 + i < size && src[i])
-	{
-		dst[len_dst + i] = src[i];
-		i++;
-	}
-	dst[len_dst + i] = 0;
-	return (len_dst + len_src);
+	len_s1 = ft_strlen((char *)s1);
+	len_s2 = ft_strlen((char *)s2);
+	total = len_s1 + len_s2;
+	dst = (char *)malloc(sizeof(char) * (total + 1));
+	if (!dst)
+		return (0);
+	while (len_s1--)
+		*dst++ = *s1++;
+	while (len_s2--)
+		*dst++ = *s2++;
+	*dst = 0;
+	dst -= total;
+	return (dst);
 }

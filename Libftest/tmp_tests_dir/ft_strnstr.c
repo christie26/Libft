@@ -6,7 +6,7 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 22:15:31 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/18 12:57:40 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:59:07 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,7 @@ int	check_all(const char *haystack, const char *needle, size_t i, size_t len)
 	size_t	j;
 
 	j = 0;
-<<<<<<< HEAD
-	while (needle[j] && (haystack[i + j] == needle[j]) && (i + j) < len)
-=======
 	while (needle[j] && (haystack[i + j] == needle[j]) && i + j < len)
->>>>>>> a5778cf1996bd11494cd4bd0dc7089fb69a9e39b
 		j++;
 	if (needle[j] == 0)
 		return (1);
@@ -31,16 +27,24 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	len_hay;
+	int		flag;
 
 	i = 0;
+	flag = 0;
 	if (needle[i] == 0)
 		return ((char *)haystack);
 	len_hay = ft_strlen((char *)haystack);
 	while (i < len_hay && i < len)
 	{
 		if (check_all(haystack, needle, i, len))
-			return ((char *)haystack + i);
+		{
+			flag = 1;
+			break ;
+		}
 		i++;
 	}
-	return (0);
+	if (flag == 1)
+		return ((char *)haystack + i);
+	else
+		return (0);
 }

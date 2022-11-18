@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 21:57:03 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 19:25:15 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/11 12:38:27 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:56:17 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t	len_dst;
-	size_t	len_src;
-	size_t	i;
+	char	*tmp;
 
-	len_dst = ft_strlen(dst);
-	len_src = ft_strlen((char *)src);
-	if (size == 0)
-		return (len_src);
-	if (size < len_dst)
-		return (size + len_src);
-	i = 0;
-	while (len_dst + 1 + i < size && src[i])
-	{
-		dst[len_dst + i] = src[i];
-		i++;
-	}
-	dst[len_dst + i] = 0;
-	return (len_dst + len_src);
+	if (!dst && !src)
+		return (0);
+	tmp = (char *)dst;
+	while (n--)
+		*tmp++ = *(char *)src++;
+	return (dst);
 }

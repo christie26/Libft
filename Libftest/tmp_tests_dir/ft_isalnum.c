@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 21:57:03 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 19:25:15 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/11 17:04:33 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:55:06 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int	ft_isalnum(int c)
 {
-	size_t	len_dst;
-	size_t	len_src;
-	size_t	i;
+	unsigned char	d;
 
-	len_dst = ft_strlen(dst);
-	len_src = ft_strlen((char *)src);
-	if (size == 0)
-		return (len_src);
-	if (size < len_dst)
-		return (size + len_src);
-	i = 0;
-	while (len_dst + 1 + i < size && src[i])
-	{
-		dst[len_dst + i] = src[i];
-		i++;
-	}
-	dst[len_dst + i] = 0;
-	return (len_dst + len_src);
+	d = (unsigned char)c;
+	if (('A' <= d && d <= 'Z') || ('a' <= d && d <= 'z'))
+		return (1);
+	else if ('0' <= d && d <= '9')
+		return (1);
+	else
+		return (0);
 }

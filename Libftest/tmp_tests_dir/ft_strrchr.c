@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 21:57:03 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 19:25:15 by yoonsele         ###   ########.fr       */
+/*   Created: 2022/11/08 20:58:08 by yoonsele          #+#    #+#             */
+/*   Updated: 2022/11/15 18:59:12 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t	len_dst;
-	size_t	len_src;
-	size_t	i;
+	char	key;
+	int		i;
+	int		tmp;
+	int		len_src;
 
-	len_dst = ft_strlen(dst);
-	len_src = ft_strlen((char *)src);
-	if (size == 0)
-		return (len_src);
-	if (size < len_dst)
-		return (size + len_src);
+	len_src = ft_strlen((char *)s);
+	key = c;
 	i = 0;
-	while (len_dst + 1 + i < size && src[i])
+	tmp = -1;
+	while (i < len_src + 1)
 	{
-		dst[len_dst + i] = src[i];
+		if (src[i] == key)
+			tmp = i;
 		i++;
 	}
-	dst[len_dst + i] = 0;
-	return (len_dst + len_src);
+	if (tmp != -1)
+		return (src + tmp);
+	return (0);
 }
