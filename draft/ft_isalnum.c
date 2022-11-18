@@ -6,7 +6,7 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 17:04:33 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 18:55:06 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/18 13:25:00 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@ int	ft_isalnum(int c)
 	unsigned char	d;
 
 	d = (unsigned char)c;
-	if (('A' <= d && d <= 'Z') || ('a' <= d && d <= 'z'))
-		return (1);
-	else if ('0' <= d && d <= '9')
+	if (ft_isalpha(d) || ft_isdigit(d))
 		return (1);
 	else
 		return (0);

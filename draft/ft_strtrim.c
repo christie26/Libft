@@ -6,7 +6,7 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 19:01:14 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 18:59:17 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/18 13:15:04 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,6 @@ char	*ft_strtrim(char const *src, char const *set)
 		len = 0;
 	else
 		len = i - begin + 1;
-	res = (char *)malloc(sizeof(char) * (len + 1));
-	if (!res)
-		return (0);
-	src += begin;
-	i = -1;
-	while (++i < len)
-		res[i] = src[i];
-	res[i] = 0;
+	res = ft_substr(src, begin, len);
 	return (res);
 }

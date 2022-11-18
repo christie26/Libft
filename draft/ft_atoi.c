@@ -6,7 +6,7 @@
 /*   By: yoonsele <yoonsele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 08:32:52 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 18:54:53 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/18 13:23:10 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_atoi(const char *str)
 		j = (j * 10) + (str[i] - '0');
 		i++;
 	}
-	if (count % 2 == 1)
+	if (count == 1)
 		j = -j;
 	return (j);
 }
