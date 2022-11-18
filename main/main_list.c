@@ -66,7 +66,7 @@ int	main(void)
 
 	//ft_lstlast
 	printf("\nft_lstlast\nlast node's content is %ld\n",(long)ft_lstlast(head)->content);
-		
+
 	//ft_lstadd_back
 	new = ft_lstnew((void *)40);
 	ft_lstadd_back(&head, new);	

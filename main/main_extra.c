@@ -6,7 +6,7 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 17:11:37 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 18:43:40 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/15 20:46:08 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(void)
 {
-
+/*
 	// substr
 	char *s = "happye";
 	unsigned int start = 3;
@@ -25,17 +25,17 @@ int main(void)
 	
 	//strjoin
 	//	printf("ft_strjoin:%s\n", ft_strjoin("happy","123"));	
-/*
+*/
 	// split
 	char	**tab;
-	tab = ft_split("", 'z');
+	tab = ft_split("xxxxxxxxhello!", 'x');
 	int	i = 0;
 	while (tab[i])
 	{
 	printf("%dth is %s\n", i, tab[i]);
 	i++;
 	}
-
+/*
 	//itoa
 	printf("%s\n", ft_itoa(2147483647));
 	printf("%s\n", ft_itoa(-2147483648));

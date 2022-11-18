@@ -1,4 +1,5 @@
 ./Libftest/*
 *.o
+*.a
 .DS_Store
 a.out
