@@ -15,7 +15,7 @@ t_list	*sethead(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*head;
 	void	*tmp;
 
-	if (!lst || !f)
+	if (!lst)
 		return (0);
 	tmp = (*f)(lst->content);
 	head = ft_lstnew(tmp);

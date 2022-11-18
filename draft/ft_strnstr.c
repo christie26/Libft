@@ -12,14 +12,10 @@
 
 int	check_all(const char *haystack, const char *needle, size_t i, size_t len)
 {
-	size_t	j;
+	int	j;
 
 	j = 0;
-<<<<<<< HEAD
 	while (needle[j] && (haystack[i + j] == needle[j]) && (i + j) < len)
-=======
-	while (needle[j] && (haystack[i + j] == needle[j]) && i + j < len)
->>>>>>> a5778cf1996bd11494cd4bd0dc7089fb69a9e39b
 		j++;
 	if (needle[j] == 0)
 		return (1);

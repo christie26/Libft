@@ -53,4 +53,4 @@ re:			fclean all
 bonus:		${BOBJS}
 			ar rcs ${NAME} ${BOBJS}
 
-.PHONY:		all clean fclean re bonus
+.PHONY:		all clean fclean re
