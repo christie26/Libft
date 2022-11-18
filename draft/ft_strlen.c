@@ -6,13 +6,13 @@
 /*   By: yoonsele <yoonsele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 15:40:50 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 19:25:22 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/18 19:20:28 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
