@@ -6,9 +6,11 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 13:21:36 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/18 13:54:59 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/20 18:47:29 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

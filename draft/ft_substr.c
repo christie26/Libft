@@ -6,9 +6,11 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 18:43:39 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/18 14:56:31 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/20 18:47:52 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static size_t	get_length(char const *s, unsigned int start, size_t len)
 {

@@ -6,11 +6,13 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 22:15:31 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/18 14:56:16 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/20 18:47:39 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	check_all(const char *haystack, const char *needle, size_t i, size_t len)
+#include "libft.h"
+
+static int	chk(const char *haystack, const char *needle, size_t i, size_t len)
 {
 	int	j;
 
@@ -34,7 +36,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	len_hay = ft_strlen((char *)haystack);
 	while (i < len_hay && i < len)
 	{
-		if (check_all(haystack, needle, i, len))
+		if (chk(haystack, needle, i, len))
 			return ((char *)haystack + i);
 		i++;
 	}

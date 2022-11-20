@@ -6,9 +6,11 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 14:29:16 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/18 14:06:39 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/20 18:45:29 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {

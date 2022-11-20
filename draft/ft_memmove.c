@@ -6,9 +6,11 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:45:02 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/18 13:08:09 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/20 18:45:42 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

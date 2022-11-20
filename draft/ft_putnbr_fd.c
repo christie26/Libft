@@ -6,9 +6,11 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 14:22:46 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/18 13:56:11 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/20 18:45:53 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

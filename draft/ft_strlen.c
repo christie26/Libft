@@ -6,9 +6,11 @@
 /*   By: yoonsele <yoonsele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 15:40:50 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/18 19:20:28 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/20 18:47:26 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlen(const char *str)
 {

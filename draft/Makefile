@@ -6,7 +6,7 @@
 #    By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/11 11:44:34 by yoonsele          #+#    #+#              #
-#    Updated: 2022/11/18 14:54:27 by yoonsele         ###   ########.fr        #
+#    Updated: 2022/11/20 18:16:58 by yoonsele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ $(NAME):	${OBJS}
 			ar rcs ${NAME} ${OBJS}
 
 .c.o:
-			${CC} ${CFLAGS}	-c $< -o $@ -include ${HEADER}
+			${CC} ${CFLAGS}	-c $< -o $@
 
 clean:
 			${RM} ${OBJS} ${BOBJS}
