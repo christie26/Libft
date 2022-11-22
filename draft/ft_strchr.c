@@ -16,8 +16,8 @@ char	*ft_strchr(const char *s, int c)
 {
 	char	key;
 	char	*src;
-	int		i;
-	int		len_src;
+	size_t	i;
+	size_t	len_src;
 
 	src = (char *) s;
 	len_src = ft_strlen(src);

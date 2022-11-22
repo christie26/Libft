@@ -17,6 +17,8 @@ void	ft_lstadd_back(t_list **lst, t_list *node)
 	t_list	*head;
 
 	head = *lst;
+	if (!lst || !node)
+		return ;
 	if (*lst)
 	{
 		while ((*lst)->next)

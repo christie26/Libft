@@ -20,6 +20,8 @@ static t_list	*sethead(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	if (!lst)
 		return (0);
 	tmp = (*f)(lst->content);
+	if (!tmp)
+		return (0);
 	head = ft_lstnew(tmp);
 	if (!head)
 	{
@@ -42,6 +44,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	{
 		lst = lst->next;
 		tmp = (*f)(lst->content);
+		if (!tmp)
+			return (0);	
 		curr = ft_lstnew(tmp);
 		if (!curr)
 		{
