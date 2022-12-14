@@ -1,66 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_utoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 09:41:39 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/15 18:55:26 by yoonsele         ###   ########.fr       */
+/*   Updated: 2022/11/20 18:45:06 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	find_digit(int n, int *flag, unsigned int *nb)
+#include "libft.h"
+
+static int	find_digit(unsigned int n)
 {
-	int				cnt;
-	unsigned int	tmp;
+	int	cnt;
 
 	if (n == 0)
-	{
-		*nb = 0;
 		return (1);
-	}
 	cnt = 0;
-	if (n < 0)
-	{
-		*nb = -n;
-		cnt++;
-		*flag = 1;
-	}
-	else
-		*nb = n;
-	tmp = *nb;
-	while (tmp)
+	while (n)
 	{
 		cnt++;
-		tmp /= 10;
+		n /= 10;
 	}
 	return (cnt);
 }
 
-char	*ft_itoa(int n)
+char	*ft_utoa(unsigned int n)
 {
 	int				digit;
-	unsigned int	nb;
-	int				flag;
 	char			*res;
 	char			*tmp;
 
-	digit = find_digit(n, &flag, &nb);
+	digit = find_digit(n);
 	res = (char *)malloc(sizeof(char) * (digit + 1));
 	if (!res)
 		return (0);
 	tmp = res;
-	if (flag)
-		*tmp = '-';
 	tmp += (digit - 1);
-	if (nb == 0)
+	if (n == 0)
 		res[0] = '0';
-	while (nb != 0)
+	while (n != 0)
 	{
-		*tmp = nb % 10 + '0';
+		*tmp = n % 10 + '0';
 		tmp--;
-		nb /= 10;
+		n /= 10;
 	}
 	res[digit] = 0;
 	return (res);

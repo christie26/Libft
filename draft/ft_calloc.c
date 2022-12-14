@@ -16,11 +16,9 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*res;
 
-//	if (size && count > SIZE_MAX / size)
-//		size = 0;
 	res = (void *)malloc(count * size);
 	if (!res)
 		return (0);
-	res = ft_bzero(res, count * size);
+	res = ft_memset(res, 0, count * size);
 	return (res);
 }
