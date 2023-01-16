@@ -6,7 +6,7 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 14:28:31 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/20 18:45:16 by yoonsele         ###   ########.fr       */
+/*   Updated: 2023/01/16 13:40:11 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!lst || !(*del))
+	if (!lst)
 		return ;
-	(*del)(lst->content);
+	if (del)
+		(*del)(lst->content);
+	lst->content = 0;
 	free (lst);
 }

@@ -6,7 +6,7 @@
 /*   By: yoonsele <yoonsele@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 14:28:09 by yoonsele          #+#    #+#             */
-/*   Updated: 2022/11/20 18:53:28 by yoonsele         ###   ########.fr       */
+/*   Updated: 2023/01/16 13:41:12 by yoonsele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,12 @@ void	ft_lstadd_front(t_list **lst, t_list *node)
 	else
 		*lst = node;
 }
+/*
+
+lst
+a -> b -> c
+
+node
+d -> e -> f
+
+*/
